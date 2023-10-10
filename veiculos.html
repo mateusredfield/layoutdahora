@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans 3' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="">
+</head>
+
+<style>
+
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+/* html {
+  position: relative;
+  min-height: 100%;
+} */
+
+/* body {
+  margin-bottom: 60px;
+} */
+/* .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+} */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* html, body {
+    height: 100%;
+} */
+
+div.pager {
+    text-align: center;
+    margin: 1em 0;
+}
+
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #216aaf;
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: #e6f1fb;
+    color: #216aaf;
+}
+
+:root {
+    --branco1: #ffffff;
+    --cinza1: #FBFBFB;
+    --cinza2: #F7F7F7;
+    --cinza3: #949494;
+    --black1: #000000;
+    --black2: #5c5c5c;
+    --black3: #acacac;
+    --black4: #363636;
+    --amarelo1: #D78B04;
+    --amarelo2: #F59C00;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Source Sans 3';
+}
+
+body{ min-height: 100vh; margin:0; }
+
+/* header{ min-height:50px; background:lightcyan; } */
+
+footer{ 
+    /* min-height:50px; 
+    background:var(--black3); */
+    /* align-self: flex-end;
+    justify-self: end;     */
+}
+
+/* The article fills all the space between header & footer */
+body{ display:flex; flex-direction:column; }
+article{ flex: 1;}
+
+
+.faixaTop {
+    position: relative;
+    top: 0%;
+    width: 100%;
+    height: 3.5vh;
+    background-color: var(--black1);
+}
+
+.faixaTopCabecalho {
+    position: relative;
+    top: 0%;
+    width: 100%;
+    height: 3.5%;
+    background-color: var(--amarelo1);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: var(--branco1);
+}
+
+.textoTopCabecalho {
+    width: 30%;
+    margin-right: 30px;
+}
+
+
+.caralho {
+    position: relative;
+    top: 10%;
+    height: 55vh;
+    width: 60%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--cinza2);
+    /* border-radius: 25px; */
+}
+
+.textUpperRight {
+    position: relative;
+    top: 1%;
+    margin-left: auto;
+    margin-right: 30px;
+    width: 65%;
+    height: 5.5%;
+    /* background-color: var(--branco1); */
+    font-size: 30px;
+    color: #EF7D00;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 800;
+    text-align: right;
+}
+
+.areaConteudo {
+    position: relative;
+    top: 9.5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 65%;
+    /* font-size: 25px;
+        font-weight: 600;
+        color: #EF7D00;
+        text-align: right; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.areaItems {
+    height: 100%;
+    width: 30%;
+    /* background-color: var(--black2); */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.areaItemLabel {
+    height: 35%;
+    width: 85%;
+    /* background-color: var(--branco1); */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.itemLabel1 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 28px;
+}
+
+.itemLabel2 {
+    margin-top: 5px;
+    font-weight: 300;
+    text-align: center;
+    font-size: 16px;
+}
+
+.areaItemConteudo {
+    height: 45%;
+    width: 75%;
+    background-color: var(--branco1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    font-size: 96px;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 5px;
+}
+
+
+.faixaBottomCabecalho {
+    /* position: absolute;
+    bottom: 3.5%; */
+    width: 100%;
+    height: 3.5;
+    background-color: var(--amarelo1);
+    color: var(--branco1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faixaBottom {
+    /* position: absolute;
+    bottom: 0%; */
+    width: 100%;
+    height: 3.5vh;
+    background-color: var(--black1);
+}
+
+.caixaCentralHome {
+    position: relative;
+    top: 7.5%;
+    display: flex;
+    justify-content: initial;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 60%;
+    height: 50vh;
+    border: 1px solid var(--black1);
+    border-radius: 5px;
+    background-color: var(--cinza1);
+}
+
+.caixaCentral {
+    /* position: relative;
+    top: 7.5%; */
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
+    height: 40vh !important;
+    border: 1px solid var(--black1);
+    border-radius: 5px;
+}
+
+.condutoresCentralLinha1 {
+    width: 100%;
+    height: 15%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid var(--black1);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+.condutoresCentralLinha2 {
+    width: 100%;
+    height: 70%;
+}
+
+.condutoresCentralLinha3 {
+    width: 100%;
+    height: 15%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 1px solid var(--black1);
+}
+
+.condutoresCentralLinha2LinhaFoto {
+    position: relative;
+    top: 10%;
+    width: 85%;
+    height: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.linhaQR {
+    width: 40%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.linhaFoto {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.linhaFotoCondutorFoto {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotoCondutor {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.linhaFotoNomeCPF {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    padding-top: 15px;
+}
+
+.labelAtivo {
+    width: 20%;
+    height: 50%;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #2F9D08;
+    color: var(--branco1);
+}
+
+.condutoresCentralLinha2LinhaDados {
+    position: relative;
+    top: 15%;
+    width: 85%;
+    height: 40%;
+    margin: auto;
+    border: 1px solid var(--black1);
+    border-radius: 5px;
+}
+
+.condutoresCentralLinha2LinhaDadosLinha1 {
+    height: 25%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    background-color: var(--cinza2);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.condutoresCentralLinha2LinhaDadosLinha2 {
+    height: 25%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.condutoresCentralLinha2LinhaDadosLinha3 {
+    height: 25%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.condutoresCentralLinha2LinhaDadosLinha4 {
+    height: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.centralizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab {
+    margin-left: 60px;
+}
+
+.recuo {
+    margin-left: 10px;
+}
+
+.nomeUsuario {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.cpfUsuario {
+    color: var(--cinza3);
+}
+
+
+.divElementosBuscaCentral {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divElementosBuscaCentralFila {
+    height: 75%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* align-items: center; */
+}
+
+.divElementosBuscaCentralFilaItem {
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid var(--black1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.divElementosBuscaCentralFilaItemLabel {
+    width: auto;
+    min-width: 30%;
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 1px solid var(--black1);
+    background-color: var(--cinza2);
+    font-weight: 600;
+}
+
+.divElementosBuscaCentralFilaItemConteudo {
+    width: auto;
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.divElementosBuscaCentralFilaItemConteudoSelect{
+
+    width: 100%;
+    border: none !important;
+    outline: none !important;
+}
+
+.divBotaoConsultar {
+    width: 25%;
+    min-width: 100px;
+    max-width: 150px;
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botaoConsultar {
+    height: 70%;
+    width: 90%;
+    border-radius: 5px;
+    background-color: var(--black4);
+    color: var(--branco1);
+}
+
+.recuo2 {
+    margin-left: 5px;
+}
+
+.recuoLinha{
+    margin-bottom: 20px;
+}
+
+.divBotaoVoltar {
+    /* position: relative;
+    top: 5%; */
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 15%;
+    height: 6vh;
+    margin-left: auto;
+    margin-right: 20%;
+    margin-top: 20px;
+    width: 25%;
+    min-width: 100px;
+    max-width: 150px;
+}
+
+.botaoCanto {
+    background-color: var(--branco1);
+    border-radius: 5px;
+    height: 100%;
+    width: 60%;
+    height: 70%;
+    width: 90%;
+}
+
+.condutoresCentralLinha1Grid {
+    width: 100%;
+    height: 15%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid var(--black1);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+.condutoresCentralLinha1GridTexto{
+
+    padding-left:5px; 
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.condutoresCentralGridLinha2 {
+    width: 100%;
+    height: 70%;
+}
+
+.condutoresCentralGridLinha2 > div:first-child > span{
+
+    color: var(--amarelo2);
+    font-weight: 600;
+}
+
+.condutoresCentralGridLinha2 > div:nth-child(2n + 1){
+
+    background-color: var(--branco1);
+}
+
+.condutoresCentralGridLinha2 > div:nth-child(2n){
+
+    background-color: var(--cinza2);
+} 
+
+.condutoresCentralGridLinha2 > div{
+
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.condutoresCentralGridLinha2 > div > span{
+
+    color: var(--black1);
+    width: 10%;
+    margin-left: 20px;
+}
+
+.fundoBlack1{
+        background-color: var(--black1);
+    }
+
+.fundoBlack2{
+    background-color: var(--black2);
+}
+
+.fundoBlack3{
+    background-color: var(--black3);
+}
+
+.fundoCinza1{
+    background-color: var(--cinza1);
+}
+
+.fundoCinza2{
+    background-color: var(--cinza2);
+}
+
+.fundoBranco1{
+    background-color: var(--branco1);
+}
+
+
+</style>
+
+<body>
+
+    
+    <!-- <p>bla bla bla</p> -->
+    <header>
+        <div class="faixaTop"></div>
+        <div class="faixaTopCabecalho">
+            <div class="textoTopCabecalho">Bem Vindo(a), Usuário ❄</div>
+        </div>
+    </header>
+    <article>
+        <div class="divBotaoVoltar">
+            <button class="botaoCanto" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                </svg>
+                 Voltar 
+            </button>
+        </div>
+        
+        <div class="caixaCentral">
+            <div class="condutoresCentralLinha1 fundoCinza2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-car-front" viewBox="0 0 16 16">
+                    <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z"/>
+                    <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.807.807 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155 1.806 0 4.037-.084 5.592-.155A1.479 1.479 0 0 0 15 9.611v-.413c0-.099-.01-.197-.03-.294l-.335-1.68a.807.807 0 0 0-.43-.563 1.807 1.807 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3H4.82Z"/>
+                  </svg>
+                <span style="padding-left:5px; font-size: 22px;">Veículos</span>
+                </div>
+            <div class="condutoresCentralLinha2 fundoBranco1">
+                <div class="divElementosBuscaCentral">
+                    <div class="divElementosBuscaCentralFila">
+                        <div class="divElementosBuscaCentralFilaItem">
+                            <div class="divElementosBuscaCentralFilaItemLabel">Id</div>
+                            <div class="divElementosBuscaCentralFilaItemConteudo">1</div>
+                        </div>
+                        <div class="divElementosBuscaCentralFilaItem">
+                            <div class="divElementosBuscaCentralFilaItemLabel">Modelo</div>
+                            <div class="divElementosBuscaCentralFilaItemConteudo">fiat</div>
+                        </div>
+                        <div class="divElementosBuscaCentralFilaItem">
+                            <div class="divElementosBuscaCentralFilaItemLabel">Ano</div>
+                            <div class="divElementosBuscaCentralFilaItemConteudoSelect">
+                                <select class="divElementosBuscaCentralFilaItemConteudoSelect" name="cars" id="cars">
+                                    <option value="">Ano</option>
+                                    <option value="1940">1940</option>
+                                    <option value="1941">1941</option>
+                                    <option value="1942">1942</option>
+                                    <option value="1943">1943</option>
+                                    <option value="1944">1944</option>
+                                    <option value="1945">1945</option>
+                                    <option value="1946">1946</option>
+                                    <option value="1947">1947</option>
+                                    <option value="1948">1948</option>
+                                    <option value="1949">1949</option>
+                                    <option value="1950">1950</option>
+                                    <option value="1951">1951</option>
+                                    <option value="1952">1952</option>
+                                    <option value="1953">1953</option>
+                                    <option value="1954">1954</option>
+                                    <option value="1955">1955</option>
+                                    <option value="1956">1956</option>
+                                    <option value="1957">1957</option>
+                                    <option value="1958">1958</option>
+                                    <option value="1959">1959</option>
+                                    <option value="1960">1960</option>
+                                    <option value="1961">1961</option>
+                                    <option value="1962">1962</option>
+                                    <option value="1963">1963</option>
+                                    <option value="1964">1964</option>
+                                    <option value="1965">1965</option>
+                                    <option value="1966">1966</option>
+                                    <option value="1967">1967</option>
+                                    <option value="1968">1968</option>
+                                    <option value="1969">1969</option>
+                                    <option value="1970">1970</option>
+                                    <option value="1971">1971</option>
+                                    <option value="1972">1972</option>
+                                    <option value="1973">1973</option>
+                                    <option value="1974">1974</option>
+                                    <option value="1975">1975</option>
+                                    <option value="1976">1976</option>
+                                    <option value="1977">1977</option>
+                                    <option value="1978">1978</option>
+                                    <option value="1979">1979</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2023">2024</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divElementosBuscaCentralFila">
+                        <div class="divElementosBuscaCentralFilaItem">
+                            <div class="divElementosBuscaCentralFilaItemLabel">Placa</div>
+                            <div class="divElementosBuscaCentralFilaItemConteudo">abc123</div>
+                        </div>
+                        <div class="divElementosBuscaCentralFilaItem">
+                            <div class="divElementosBuscaCentralFilaItemLabel">Cor</div>
+                            <div class="divElementosBuscaCentralFilaItemConteudo">bege</div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <!-- <div class="condutoresCentralLinha2LinhaFoto fundoCinza1">
+                    <div class="linhaFoto ">
+                        <div class="linhaFotoCondutorFoto">
+                            <img class="fotoCondutor" src="default-image.jpg" alt="imagem" >
+                        </div>
+                        <div class="recuo"></div>
+                        <div class="linhaFotoNomeCPF">
+                            <div class="nomeUsuario">Nome do Usuário</div>
+                            <div class="cpfUsuario">CPF: 123.456.789-10</div>
+                        </div>
+                    </div>
+                    <div class="linhaQR">
+                        <div id="qrcode"></div>
+                        <span class="recuo"></span>
+                        <span class="recuo"></span>
+                        <span class="recuo"></span>
+                        <div class="labelAtivo">Ativo</div>
+                        <span class="recuo"></span>
+                    </div>
+                </div>
+                <div class="condutoresCentralLinha2LinhaDados">
+                    <div class="condutoresCentralLinha2LinhaDadosLinha1">
+                        <span class="recuo"></span> Dados Registro
+                    </div>
+                    <div class="condutoresCentralLinha2LinhaDadosLinha2">
+                        <span class="recuo"></span>
+                        <span style="width: 30%;">ConduApp:</span>
+                        <span style="width: 30%;">1</span>    
+                    </div>
+                    <div class="condutoresCentralLinha2LinhaDadosLinha3">
+                        <span class="recuo"></span>
+                        <span style="width: 30%;">Idade:</span>
+                        <span style="width: 30%;">30</span>
+                    </div>
+                    <div class="condutoresCentralLinha2LinhaDadosLinha4">
+                        <span class="recuo"></span>
+                        <span style="width: 30%;">HashConduApp:</span>
+                        <span style="width: 60%;">1231133415</span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="condutoresCentralLinha3 fundoCinza2">
+                <div class="divBotaoConsultar">
+                    <button class="botaoConsultar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                          <span class="recuo2"></span>
+                          Consultar
+                    </button>
+                </div>
+            </div>
+            <!-- <button > <i class="bi bi-arrow-left"></i> Voltar </button> -->
+        </div>
+        <div class="caixaCentral">
+            <div class="condutoresCentralLinha1Grid fundoCinza2">
+                <span class="condutoresCentralLinha1GridTexto">
+                    Total de Registros Encontrados
+                </span>
+            </div>
+            <div class="condutoresCentralGridLinha2">
+                <!-- <div class="divElementosBuscaCentral">
+                </div> -->
+                <div>
+                    <span>Id</span>
+                    <span>Placa</span>
+                    <span>Modelo</span>
+                    <span>Cor</span>
+                    <span>Ano</span>
+                </div>
+                <div>
+                    <span>1</span>
+                    <span>abc123</span>
+                    <span>fiat</span>
+                    <span>cinza</span>
+                    <span>2000</span>
+                </div>
+            </div>
+            <div class="condutoresCentralLinha3 fundoCinza2">
+            </div>
+            <!-- <button > <i class="bi bi-arrow-left"></i> Voltar </button> -->
+        </div>
+        <div class="recuoLinha"></span>
+    </article>
+
+    <footer>
+        <div class="faixaBottomCabecalho"> @PEBPG Desenvolvido por SEPLAN - Secretaria de Planejamento 2023</div>
+        <div class="faixaBottom"></div>
+    </footer>
+
+
+</body>
+
+
+<script>
+
+    
+
+
+function loadScript(url, callback)
+{
+    var head = document.head;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
+}
+
+function converteUrlAtualPraQR(elemento) {
+
+    var url = window.location.href;
+    const qrcode = new QRCode( elemento, {
+        text: url,
+        width: 128,
+        height: 128,
+        colorDark : '#000',
+        colorLight : '#fff',
+        correctLevel : QRCode.CorrectLevel.H
+    });
+}
+
+function callbackQR(){
+
+    converteUrlAtualPraQR(document.getElementById("qrcode"));
+}
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
+loadScript("qrcode.min.js", callbackQR);
+
+converteUrlAtualPraQR(document.getElementById("qrcode"));
+
+
+
+
+
+}, false);
+
+
+
+</script>
+
+</html>
